@@ -60,8 +60,8 @@ The bot will:
 ## Slash commands
 - /radio — join your voice channel and stream the configured `RADIO_URL` ([`radio`](radio.py)).
 - /pause — pause playback ([`pause`](radio.py)).
-- /resume — resume playback (`[resume`](radio.py)).
-- /stop — stop and disconnect ([`stop`](radio.py`).
+- /resume — resume playback ([`resume`](radio.py)).
+- /stop — stop and disconnect ([`stop`](radio.py)).
 - /nowplaying — show the currently playing song (uses [`get_title_from_api`](radio.py) and [`get_song_details`](radio.py)).
 - /lastplayed — show recent songs saved in memory ([`lastplayed`](radio.py)`).
 
