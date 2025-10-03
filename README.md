@@ -1,6 +1,6 @@
-# Radio_Station_Discord_Bot
+# Radio_Discord_Bot
 
-A small Discord bot that streams a radio station into a voice channel, tracks recently played songs, and (optionally) fetches song metadata from Spotify.
+A Discord bot that streams a radio station into a voice channel, tracks recently played songs, and (optionally) fetches song metadata from Spotify.
 
 Quick pointers:
 - Main implementation: [radio.py](radio.py)
@@ -40,7 +40,7 @@ See: [requirements.txt](requirements.txt)
    - KEYWORD — a keyword used to detect commercial breaks in the returned title (recommended)
    - SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET — optional, for Spotify metadata
 
-Important: Keep the `.env` secret. The repo already lists `.env` in [.gitignore](.gitignore).
+> Important: Keep the `.env` secret. The repo already lists `.env` in [.gitignore](.gitignore).
 
 ## Bot Setup (Discord)
 1. Create a bot in the Discord Developer Portal and copy the token into `DISCORD_TOKEN`.
@@ -77,13 +77,6 @@ The `get_title_from_api` helper expects `SONGS_URL` to return JSON with an "ices
 ## Security and privacy
 - Do not commit your `DISCORD_TOKEN` or Spotify credentials. Use `.env` or a secrets manager.
 - The bot keeps an in-memory history (`song_history`) of last songs (up to 50) and does not persist them to disk.
-
-## Files of interest
-- Main code: [radio.py](radio.py) — contains all command handlers and helpers (`[`get_title_from_api`](radio.py)`, `[`get_song_details`](radio.py)`, `[`update_song_history`](radio.py)`, `[`populate_np_embed`](radio.py)`, `[`populate_lp_embed`](radio.py)`, `[`update_activity`](radio.py)`, `[`get_title_normalized`](radio.py)`).
-- Environment example: [.env.example](.env.example)
-- Dependencies: [requirements.txt](requirements.txt)
-- License: [LICENSE](LICENSE)
-- Git ignore: [.gitignore](.gitignore)
 
 ## License
 This project is covered under the terms in [LICENSE](LICENSE).
