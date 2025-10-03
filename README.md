@@ -58,12 +58,12 @@ The bot will:
 - Start the background poller [`update_song_history`](radio.py) which runs every minute (configurable in code).
 
 ## Slash commands
-- /radio — join your voice channel and stream the configured `RADIO_URL` (`[`radio`](radio.py)`).
-- /pause — pause playback (`[`pause`](radio.py)`).
-- /resume — resume playback (`[`resume`](radio.py)`).
-- /stop — stop and disconnect (`[`stop`](radio.py)`).
+- /radio — join your voice channel and stream the configured `RADIO_URL` ([`radio`](radio.py)).
+- /pause — pause playback ([`pause`](radio.py)).
+- /resume — resume playback (`[resume`](radio.py)).
+- /stop — stop and disconnect ([`stop`](radio.py`).
 - /nowplaying — show the currently playing song (uses [`get_title_from_api`](radio.py) and [`get_song_details`](radio.py)).
-- /lastplayed — show recent songs saved in memory (`[`lastplayed`](radio.py)`).
+- /lastplayed — show recent songs saved in memory ([`lastplayed`](radio.py)`).
 
 ## API expectations
 The `get_title_from_api` helper expects `SONGS_URL` to return JSON with an "icestats" object that includes a "title" field somewhere inside a nested dict. Adjust logic in [`get_title_from_api`](radio.py) if your station's API format differs.
