@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 #^ Bot setup
 intents = discord.Intents.default()
 intents.message_content = True  
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix="/", intents=intents)
 radio_playing = False
 greece_tz = pytz.timezone('Europe/Athens')
 # Store last played songs locally
@@ -103,7 +103,7 @@ from helpers import (
 
 #& Slash Commands
 #? radio
-@bot.tree.command(name="radio", description="Join your voice channel and stream radio")
+@bot.tree.command(name="radio", description="Join your voice channel and stream radio!")
 async def radio(interaction: discord.Interaction):
     await interaction.response.defer()
     global radio_playing
@@ -133,7 +133,7 @@ async def radio(interaction: discord.Interaction):
     await interaction.followup.send("🎶 Now streaming Radio!", ephemeral=True)
 
 #?pause
-@bot.tree.command(name="pause")
+@bot.tree.command(name="pause", description="Pause the radio stream")
 async def pause(interaction: discord.Interaction):
     await interaction.response.defer()
     voice = get(bot.voice_clients, guild=interaction.guild)
@@ -144,7 +144,7 @@ async def pause(interaction: discord.Interaction):
         await interaction.followup.send("Nothing is playing right now...", ephemeral=True)
 
 #?resume
-@bot.tree.command(name="resume")
+@bot.tree.command(name="resume", description="Resume the radio stream")
 async def resume(interaction: discord.Interaction):
     await interaction.response.defer()
     voice = get(bot.voice_clients, guild=interaction.guild)
